@@ -61,7 +61,7 @@ app.get('/team/:teamMemberId', async (request, response) => {
   } catch (error) {
     console.error('Error in Fecthing Team Member:', error)
     response.status(500)
-    response.send({message: 'Internal Server Error})
+    response.send({message: 'Internal Server Error'})
   }
 })
 
@@ -194,7 +194,7 @@ app.get('/ratings/:id', async (request, response) => {
   } catch (error) {
     console.error('Error in Fecthing rating details:', error)
     response.status(500)
-    response.send({message: 'Internal Server Error})
+    response.send({message: 'Internal Server Error'})
   }
 })
     
