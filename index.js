@@ -46,6 +46,25 @@ app.get('/team', async (request, response) => {
   }
 })
 
+app.get('/team/:teamMemberId', async (request, response) => {
+  const {teamMemberId} = request.params
+  try {
+    const getTeamMemberQuery = `SELECT
+      *
+    FROM
+      team 
+    WHERE
+      id = ${teamMemberId};`
+    const teamMember = await db.get(getTeamMemberQuery)
+    response.status(200)
+    response.send(teamMember)
+  } catch (error) {
+    console.error('Error in Fecthing Team Member:', error)
+    response.status(500)
+    response.send({message: 'Internal Server Error})
+  }
+})
+
 app.post('/team', async (request, response) => {
   const teamMemberDetails = request.body
   const {name, profession, mobileNumber} = teamMemberDetails
@@ -159,6 +178,26 @@ app.get('/ratings', async (request, response) => {
     response.send({error: 'Internal Server Error'})
   }
 })
+
+app.get('/ratings/:id', async (request, response) => {
+  const {id} = request.params
+  try {
+    const getRatingQuery = `SELECT
+      *
+    FROM
+      ratings
+    WHERE
+      id = ${id};`
+    const ratingDetails = await db.get(getRatingQuery)
+    response.status(200)
+    response.send(ratingDetails)
+  } catch (error) {
+    console.error('Error in Fecthing rating details:', error)
+    response.status(500)
+    response.send({message: 'Internal Server Error})
+  }
+})
+    
 
 app.post('/ratings', async (request, response) => {
   const ratingDetails = request.body
