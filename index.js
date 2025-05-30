@@ -333,3 +333,5 @@ app.get('/averageRating/:teamMemberId', async (request, response) => {
   const averageRating = await db.all(getAverageRatingQuery)
   response.send(averageRating)
 })
+
+module.exports = app
