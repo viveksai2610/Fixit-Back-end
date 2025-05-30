@@ -1,0 +1,72 @@
+
+GET http://localhost:3000/team
+
+###
+
+POST http://localhost:3000/team
+Content-Type: application/json
+
+{   
+    "name":"raj",
+    "profession":"TV mechanic",
+    "mobileNumber": "0929928920"
+}
+
+###
+
+PUT http://localhost:3000/team/28
+Content-Type: application/json
+
+{   
+    "name":"raj",
+    "profession":"Fridge mechanic",
+    "mobileNumber": "0929928920"
+}
+
+
+###
+
+DELETE http://localhost:3000/team/29
+
+###
+
+GET http://localhost:3000/ratings
+
+###
+
+POST http://localhost:3000/ratings
+Content-Type: application/json
+
+{   
+    "teamMemberId":27,
+    "rating": 5,
+    "review": "Excellent work!"
+}
+
+###
+
+PUT http://localhost:3000/ratings/51
+Content-Type: application/json
+
+{   
+    "teamMemberId":26,
+    "rating": 5,
+    "review": "TV working like new!!"
+}
+
+###
+
+DELETE http://localhost:3000/ratings/55
+
+###
+
+GET http://localhost:3000/ratings/team/8
+
+###
+
+GET http://localhost:3000/averageRating/19
+
+
+
+
+
